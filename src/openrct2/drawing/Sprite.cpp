@@ -359,7 +359,10 @@ extern "C"
             {
                 _csg.elements[i].offset += (uintptr_t)_csg.data;
                 // RCT1 used zoomed offsets that counted from the beginning of the file, rather than from the current sprite.
-                _csg.elements[i].zoomed_offset = i - (SPR_CSG_BEGIN + _csg.elements[i].zoomed_offset);
+                if (_csg.elements[i].zoomed_offset != 0)
+                {
+                    _csg.elements[i].zoomed_offset = i - (SPR_CSG_BEGIN + _csg.elements[i].zoomed_offset);
+                }
             }
             _csgLoaded = true;
             return true;
