@@ -203,6 +203,9 @@
 		4CE4624B1FD1613D0001CD98 /* Platform.macOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE462471FD1613D0001CD98 /* Platform.macOS.cpp */; };
 		4CE4624C1FD1613D0001CD98 /* Platform.Posix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE462481FD1613D0001CD98 /* Platform.Posix.cpp */; };
 		4CE4624D1FD1613D0001CD98 /* Platform.Win32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE462491FD1613D0001CD98 /* Platform.Win32.cpp */; };
+		4CE9AAAD1FDA7B14004093C6 /* ObjectJsonHelpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE9AAAB1FDA7B14004093C6 /* ObjectJsonHelpers.cpp */; };
+		4CF788C01F1B787700C611BF /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF788BE1F1B787700C611BF /* Painter.cpp */; };
+		4CFBCD5E1F27CD8000D74FB6 /* SmallScenery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CFBCD5D1F27CD8000D74FB6 /* SmallScenery.cpp */; };
 		4CFE4E801F90A3F1005243C2 /* Peep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE4E7B1F90A3F1005243C2 /* Peep.cpp */; };
 		4CFE4E811F90A3F1005243C2 /* PeepData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE4E7D1F90A3F1005243C2 /* PeepData.cpp */; };
 		4CFE4E821F90A3F1005243C2 /* Staff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE4E7E1F90A3F1005243C2 /* Staff.cpp */; };
@@ -871,6 +874,11 @@
 		4CE462471FD1613D0001CD98 /* Platform.macOS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Platform.macOS.cpp; sourceTree = "<group>"; };
 		4CE462481FD1613D0001CD98 /* Platform.Posix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Platform.Posix.cpp; sourceTree = "<group>"; };
 		4CE462491FD1613D0001CD98 /* Platform.Win32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Platform.Win32.cpp; sourceTree = "<group>"; };
+		4CE9AAAB1FDA7B14004093C6 /* ObjectJsonHelpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectJsonHelpers.cpp; sourceTree = "<group>"; };
+		4CE9AAAC1FDA7B14004093C6 /* ObjectJsonHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectJsonHelpers.h; sourceTree = "<group>"; };
+		4CF788BE1F1B787700C611BF /* Painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Painter.cpp; sourceTree = "<group>"; };
+		4CF788BF1F1B787700C611BF /* Painter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Painter.h; sourceTree = "<group>"; };
+		4CFBCD5D1F27CD8000D74FB6 /* SmallScenery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmallScenery.cpp; sourceTree = "<group>"; };
 		4CFE4E7B1F90A3F1005243C2 /* Peep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Peep.cpp; sourceTree = "<group>"; };
 		4CFE4E7C1F90A3F1005243C2 /* Peep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peep.h; sourceTree = "<group>"; };
 		4CFE4E7D1F90A3F1005243C2 /* PeepData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeepData.cpp; sourceTree = "<group>"; };
@@ -2156,6 +2164,8 @@
 				4C7B53A21FFC15ED00A52E21 /* ObjectLimits.h */,
 				4C7B53A31FFC180400A52E21 /* ObjectList.cpp */,
 				4C7B53A41FFC180400A52E21 /* ObjectList.h */,
+				4CE9AAAB1FDA7B14004093C6 /* ObjectJsonHelpers.cpp */,
+				4CE9AAAC1FDA7B14004093C6 /* ObjectJsonHelpers.h */,
 				F76C84221EC4E7CC00FA49E2 /* ObjectManager.cpp */,
 				F76C84231EC4E7CC00FA49E2 /* ObjectManager.h */,
 				F76C84241EC4E7CC00FA49E2 /* ObjectRepository.cpp */,
@@ -3279,6 +3289,7 @@
 				C685E51D1F8907850090598F /* Research.cpp in Sources */,
 				C64644FB1F3FA4120026AC2D /* EditorScenarioOptions.cpp in Sources */,
 				4C6A66AB1FE2787700694CB6 /* SmallScenery.cpp in Sources */,
+				4CE9AAAD1FDA7B14004093C6 /* ObjectJsonHelpers.cpp in Sources */,
 				F775F5371EE3724F001F00E7 /* DummyAudioContext.cpp in Sources */,
 				4C5DFF421FAC69D200CB093A /* Date.cpp in Sources */,
 				4C93F13C1F8B744400A9330D /* BolligerMabillardTrack.cpp in Sources */,
