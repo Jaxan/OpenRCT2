@@ -124,9 +124,10 @@ assert_struct_size(rct_object_filters, 3);
 
 #ifdef __cplusplus
 
-enum OBJ_STRING_ID
+enum OBJ_STRING_ID : uint8
 {
-    OBJ_STRING_ID_NAME,
+    OBJ_STRING_ID_UNKNOWN = 255,
+    OBJ_STRING_ID_NAME = 0,
     OBJ_STRING_ID_DESCRIPTION,
     OBJ_STRING_ID_SCENARIO_NAME = 0,
     OBJ_STRING_ID_PARK_NAME = 1,
