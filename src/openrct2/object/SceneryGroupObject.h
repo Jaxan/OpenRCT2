@@ -18,9 +18,9 @@
 
 #ifdef __cplusplus
 
-#include "Object.h"
-
+#include <vector>
 #include "../world/Scenery.h"
+#include "Object.h"
 
 struct ObjectRepositoryItem;
 
@@ -28,14 +28,13 @@ class SceneryGroupObject final : public Object
 {
 private:
     rct_scenery_group_entry _legacyType = { 0 };
-    uint32                  _numItems = 0;
-    rct_object_entry *      _items = nullptr;
+    std::vector<rct_object_entry> _items;
 
 public:
     explicit SceneryGroupObject(const rct_object_entry &entry) : Object(entry) { }
-    ~SceneryGroupObject();
 
     void * GetLegacyData()  override { return &_legacyType; }
+    void ReadJson(IReadObjectContext * context, const json_t * root) override;
 
     void ReadLegacy(IReadObjectContext * context, IStream * stream) override;
     void Load() override;
@@ -48,6 +47,9 @@ public:
 
 private:
     void ReadItems(IStream * stream);
+    static uint32 ReadJsonEntertainerCostumes(const json_t * jCostumes);
+    static uint32 ParseEntertainerCostume(const std::string &s);
+    static std::vector<rct_object_entry> ReadJsonEntries(const json_t * jEntries);
 };
 
 #endif
