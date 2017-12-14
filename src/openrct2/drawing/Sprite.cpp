@@ -828,7 +828,11 @@ extern "C"
 
     size_t g1_calculate_data_size(const rct_g1_element * g1)
     {
-        if (g1->flags & G1_FLAG_RLE_COMPRESSION)
+        if (g1->flags & G1_FLAG_PALETTE)
+        {
+            return g1->width * 3;
+        }
+        else if (g1->flags & G1_FLAG_RLE_COMPRESSION)
         {
             if (g1->offset == nullptr)
             {
