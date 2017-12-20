@@ -18,14 +18,8 @@
 
 #ifdef __cplusplus
 
-<<<<<<< HEAD
-#include "SceneryObject.h"
-
 #include "../world/Scenery.h"
-=======
-#include "../world/scenery.h"
 #include "SceneryObject.h"
->>>>>>> 41c53125d... Add JSON loading for small scenery
 
 class SmallSceneryObject final : public SceneryObject
 {
