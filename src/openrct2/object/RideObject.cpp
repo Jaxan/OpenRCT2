@@ -381,8 +381,7 @@ void RideObject::SetRepositoryItem(ObjectRepositoryItem * item) const
 void RideObject::ReadLegacyVehicle(IReadObjectContext * context, IStream * stream, rct_ride_entry_vehicle * vehicle)
 {
     vehicle->rotation_frame_mask = stream->ReadValue<uint16>();
-    vehicle->num_vertical_frames = stream->ReadValue<uint8>();
-    vehicle->num_horizontal_frames = stream->ReadValue<uint8>();
+    stream->Seek(2 * 1, STREAM_SEEK_CURRENT);
     vehicle->spacing = stream->ReadValue<uint32>();
     vehicle->car_mass = stream->ReadValue<uint16>();
     vehicle->tab_height = stream->ReadValue<sint8>();
@@ -394,21 +393,7 @@ void RideObject::ReadLegacyVehicle(IReadObjectContext * context, IStream * strea
     vehicle->var_11 = stream->ReadValue<uint8>();
     vehicle->flags = stream->ReadValue<uint32>();
     vehicle->base_num_frames = stream->ReadValue<uint16>();
-    stream->Seek(4, STREAM_SEEK_CURRENT);
-    vehicle->var_1C = stream->ReadValue<uint32>();
-    vehicle->var_20 = stream->ReadValue<uint32>();
-    vehicle->var_24 = stream->ReadValue<uint32>();
-    vehicle->var_28 = stream->ReadValue<uint32>();
-    vehicle->var_2C = stream->ReadValue<uint32>();
-    vehicle->var_30 = stream->ReadValue<uint32>();
-    vehicle->var_34 = stream->ReadValue<uint32>();
-    vehicle->var_38 = stream->ReadValue<uint32>();
-    vehicle->var_3C = stream->ReadValue<uint32>();
-    vehicle->var_40 = stream->ReadValue<uint32>();
-    vehicle->var_44 = stream->ReadValue<uint32>();
-    vehicle->var_48 = stream->ReadValue<uint32>();
-    vehicle->var_4C = stream->ReadValue<uint32>();
-    vehicle->no_vehicle_images = stream->ReadValue<uint32>();
+    stream->Seek(15 * 4, STREAM_SEEK_CURRENT);
     vehicle->no_seating_rows = stream->ReadValue<uint8>();
     vehicle->spinning_inertia = stream->ReadValue<uint8>();
     vehicle->spinning_friction = stream->ReadValue<uint8>();
@@ -750,14 +735,27 @@ rct_ride_entry_vehicle RideObject::ReadJsonCar(const json_t * jCar)
     car.car_friction = ObjectJsonHelpers::GetInteger(jCar, "friction");
     car.tab_height = ObjectJsonHelpers::GetInteger(jCar, "tabOffset");
     car.num_seats = ObjectJsonHelpers::GetInteger(jCar, "numSeats");
+    car.sprite_flags = ObjectJsonHelpers::GetInteger(jCar, "spriteFlags");
+    car.sprite_width = ObjectJsonHelpers::GetInteger(jCar, "spriteWidth");
+    car.sprite_height_negative = ObjectJsonHelpers::GetInteger(jCar, "spriteHeightNegative");
+    car.sprite_height_positive = ObjectJsonHelpers::GetInteger(jCar, "spriteHeightPositive");
+    car.var_11 = ObjectJsonHelpers::GetInteger(jCar, "var11");
+    car.flags = ObjectJsonHelpers::GetInteger(jCar, "flags");
+    car.base_num_frames = ObjectJsonHelpers::GetInteger(jCar, "baseNumFrames");
+    car.no_vehicle_images = ObjectJsonHelpers::GetInteger(jCar, "numImages");
     car.no_seating_rows = ObjectJsonHelpers::GetInteger(jCar, "numSeatRows");
     car.spinning_inertia = ObjectJsonHelpers::GetInteger(jCar, "spinningInertia");
     car.spinning_friction = ObjectJsonHelpers::GetInteger(jCar, "spinningFriction");
+    car.friction_sound_id = ObjectJsonHelpers::GetInteger(jCar, "frictionSoundId", 255);
+    car.var_58 = ObjectJsonHelpers::GetInteger(jCar, "var58");
+    car.sound_range = ObjectJsonHelpers::GetInteger(jCar, "soundRange", 255);
+    car.var_5A = ObjectJsonHelpers::GetInteger(jCar, "var5A");
     car.powered_acceleration = ObjectJsonHelpers::GetInteger(jCar, "poweredAcceleration");
     car.powered_max_speed = ObjectJsonHelpers::GetInteger(jCar, "poweredMaxSpeed");
     car.car_visual = ObjectJsonHelpers::GetInteger(jCar, "carVisual");
-    car.effect_visual = ObjectJsonHelpers::GetInteger(jCar, "effectVisual");
+    car.effect_visual = ObjectJsonHelpers::GetInteger(jCar, "effectVisual", 1);
     car.draw_order = ObjectJsonHelpers::GetInteger(jCar, "drawOrder");
+    car.num_vertical_frames_override = ObjectJsonHelpers::GetInteger(jCar, "numVerticalFramesOverride");
     return car;
 }
 
